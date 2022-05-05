@@ -1,5 +1,6 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@include file="../header.jsp"%>
 
 <div id="contact-page" class="container">
@@ -30,12 +31,12 @@
 				               	<select name="categoryId">
 										<option >-- Category --</option>
 											<!-- loop_start -->
-											
-										<option value=""></option>
-										
+										<c:forEach items="${categoryList}" var="item">
+											<option value="${item.categoryId}">${item.categoryName}</option>
+										</c:forEach>
 										<!-- loop_end -->
 										
-										</select>
+								</select>
 				            </div>
 				            <div class="form-group col-md-6">
 				                <input type="file" name="picture" class="form-control" required="required" placeholder="picture">
