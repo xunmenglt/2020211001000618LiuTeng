@@ -22,6 +22,14 @@
         <param-value>lt204330</param-value>
     </context-param>
 
+    <filter>
+        <filter-name>LiuTengFilter</filter-name>
+        <filter-class>com.lab2.LiuTengFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LiuTengFilter</filter-name>
+        <url-pattern>/lab2/welcome.jsp</url-pattern>
+    </filter-mapping>
 
 <!--    <servlet>-->
 <!--        <servlet-name>giveanyname</servlet-name>-->

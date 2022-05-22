@@ -1,4 +1,4 @@
-package com.liuteng.lab1;
+package com.lab1;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
