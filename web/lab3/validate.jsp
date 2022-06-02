@@ -24,8 +24,9 @@ if(request.getParameter("username").equals("admin") && request.getParameter("pas
 --%>
 <%--todo 2: use c:choose ,c:when c:otherwise to validate username is 'admin' and  password is 'admin'--%>
 <c:choose>
-    <h1>Author:<span style="color: red">2020211001000618-LiuTeng</span></h1>
+
     <c:when test="${param.username=='admin'&&param.password=='admin'}">
+        <h1>Author:<span style="color: red">2020211001000618-LiuTeng</span></h1>
         <%--todo 3: when username == admin use c:url and c:param to make url = "welcome.jsp?username=admin"--%>
         <c:url value="welcome.jsp" var="nextPage">
             <c:param name="username" value="${param.username}"/>
