@@ -1,9 +1,9 @@
 <%--
   Created by IntelliJ IDEA.
   User: liu'teng
-  Date: 2022/6/2
-  Time: 23:34
-  To change this template use File | Settings | File Templates.
+Date: 2022/6/2
+Time: 23:34
+To change this template use File | Settings | File Templates.
 --%>
 <%@include file="/WEB-INF/views/header.jsp" %>
 <%@page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
@@ -88,7 +88,6 @@
         addMarker();
     }
 
-    //鍒涘缓鍦板浘鍑芥暟锛?
     function createMap(){
         var map = new BMap.Map("dituContent");
         var point = new BMap.Point(115.876018,28.749703);
@@ -96,7 +95,6 @@
         window.map = map;
     }
 
-    //鍦板浘浜嬩欢璁剧疆鍑芥暟锛?
     function setMapEvent(){
         map.enableDragging();
         map.enableScrollWheelZoom();

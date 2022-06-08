@@ -23,9 +23,19 @@ if(request.getParameter("username").equals("admin") && request.getParameter("pas
 }
 --%>
 <%--todo 2: use c:choose ,c:when c:otherwise to validate username is 'admin' and  password is 'admin'--%>
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
+<sql:setDataSource var="myDs"
+                   driver='${initParam.get("driver")}'
+                   url='${initParam.get("url")}'
+                   user='${initParam.get("username")}'
+                   password='${initParam.get("password")}'/>
+<sql:query var="selectusers" dataSource="${myDs}">
+    select * from user where username="${param.username}" and password="${param.password}"
+</sql:query>
+
 <c:choose>
 
-    <c:when test="${param.username=='admin'&&param.password=='admin'}">
+    <c:when test="${!empty selectusers.rows}">
         <h1>Author:<span style="color: red">2020211001000618-LiuTeng</span></h1>
         <%--todo 3: when username == admin use c:url and c:param to make url = "welcome.jsp?username=admin"--%>
         <c:url value="welcome.jsp" var="nextPage">
